@@ -7,6 +7,12 @@ plugins {
 	kotlin("plugin.spring") version "1.9.24"
 }
 
+allOpen {
+	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.Embeddable")
+	annotation("javax.persistence.MappedSuperclass")
+}
+
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
