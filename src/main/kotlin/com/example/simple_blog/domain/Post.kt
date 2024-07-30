@@ -8,15 +8,14 @@ import jakarta.validation.constraints.NotBlank
 class Post (
     title: String,
     content: String
-
 ): AuditingEntity() {
     @Column(nullable = false)
     @NotBlank
     var title: String = title
-        private set
+        protected set
 
     @Column(nullable = false)
     @NotBlank
     var content: String = content
-        private set
+        protected set
 }

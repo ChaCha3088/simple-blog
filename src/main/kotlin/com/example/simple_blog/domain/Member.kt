@@ -7,25 +7,33 @@ import jakarta.validation.constraints.NotBlank
 
 @Entity
 class Member (
-    @Column(nullable = false)
-    @NotBlank
-    var email: String,
-
-    @Column(nullable = false)
-    @NotBlank
-    var password: String,
-
-    @Column(nullable = false)
-    @NotBlank
-    var role: MemberRole = USER,
-
-    @Column(nullable = false)
-    @NotBlank
-    var name: String,
-
-    @Column(nullable = false)
-    @NotBlank
-    var nickname: String
+    email: String,
+    password: String,
+    name: String,
+    nickname: String
 ): AuditingEntity() {
+    @Column(nullable = false)
+    @NotBlank
+    var email: String = email
+        protected set
 
+    @Column(nullable = false)
+    @NotBlank
+    var password: String = password
+        protected set
+
+    @Column(nullable = false)
+    @NotBlank
+    var role: MemberRole = USER
+        protected set
+
+    @Column(nullable = false)
+    @NotBlank
+    var name: String = name
+        protected set
+
+    @Column(nullable = false)
+    @NotBlank
+    var nickname: String = nickname
+        protected set
 }
