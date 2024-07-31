@@ -1,5 +1,6 @@
-package com.example.simple_blog.domain
+package com.example.simple_blog.domain.member
 
+import com.example.simple_blog.domain.AuditingEntity
 import com.example.simple_blog.enumstrorage.MemberRole
 import com.example.simple_blog.enumstrorage.MemberRole.USER
 import jakarta.persistence.*

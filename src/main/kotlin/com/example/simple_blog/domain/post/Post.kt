@@ -1,0 +1,31 @@
+package com.example.simple_blog.domain.post
+
+import com.example.simple_blog.domain.AuditingEntity
+import com.example.simple_blog.domain.member.Member
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.FetchType.LAZY
+import jakarta.persistence.ManyToOne
+import jakarta.validation.constraints.NotBlank
+
+@Entity
+class Post (
+    title: String,
+    content: String,
+    member: Member
+): AuditingEntity() {
+    @Column(nullable = false)
+    @NotBlank
+    var title: String = title
+        protected set
+
+    @Column(nullable = false)
+    @NotBlank
+    var content: String = content
+        protected set
+
+    @Column(nullable = false)
+    @ManyToOne(fetch = LAZY, targetEntity = Member::class)
+    var member: Member = member
+        protected set
+}

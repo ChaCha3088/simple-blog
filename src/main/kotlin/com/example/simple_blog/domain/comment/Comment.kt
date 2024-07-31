@@ -1,0 +1,31 @@
+package com.example.simple_blog.domain.comment
+
+import com.example.simple_blog.domain.AuditingEntity
+import com.example.simple_blog.domain.member.Member
+import com.example.simple_blog.domain.post.Post
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.FetchType.LAZY
+import jakarta.persistence.ManyToOne
+import jakarta.validation.constraints.NotBlank
+
+@Entity
+class Comment (
+    content: String,
+    member: Member,
+    post: Post
+): AuditingEntity() {
+    @Column(nullable = false)
+    @NotBlank
+    var content: String = content
+        protected set
+
+    @ManyToOne(fetch = LAZY, targetEntity = Member::class)
+    var member: Member = member
+        protected set
+
+    @Column(nullable = false)
+    @ManyToOne(fetch = LAZY, targetEntity = Post::class)
+    var post: Post = post
+        protected set
+}
