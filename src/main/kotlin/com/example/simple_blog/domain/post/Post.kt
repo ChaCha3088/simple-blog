@@ -5,6 +5,7 @@ import com.example.simple_blog.domain.member.Member
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType.LAZY
+import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.validation.constraints.NotBlank
 
@@ -24,7 +25,7 @@ class Post (
     var content: String = content
         protected set
 
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @ManyToOne(fetch = LAZY, targetEntity = Member::class)
     var member: Member = member
         protected set

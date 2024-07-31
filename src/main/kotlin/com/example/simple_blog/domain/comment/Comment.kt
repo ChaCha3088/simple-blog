@@ -6,6 +6,7 @@ import com.example.simple_blog.domain.post.Post
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType.LAZY
+import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.validation.constraints.NotBlank
 
@@ -20,11 +21,12 @@ class Comment (
     var content: String = content
         protected set
 
+    @JoinColumn(nullable = false)
     @ManyToOne(fetch = LAZY, targetEntity = Member::class)
     var member: Member = member
         protected set
 
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @ManyToOne(fetch = LAZY, targetEntity = Post::class)
     var post: Post = post
         protected set
