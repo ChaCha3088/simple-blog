@@ -1,8 +1,8 @@
-package com.example.simple_blog.domain.comment
+package com.example.simple_blog.domain.comment.entity
 
 import com.example.simple_blog.domain.AuditingEntity
-import com.example.simple_blog.domain.member.Member
-import com.example.simple_blog.domain.post.Post
+import com.example.simple_blog.domain.member.entity.Member
+import com.example.simple_blog.domain.post.entity.Post
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType.LAZY

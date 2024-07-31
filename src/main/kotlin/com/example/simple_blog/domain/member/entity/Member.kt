@@ -1,4 +1,4 @@
-package com.example.simple_blog.domain.member
+package com.example.simple_blog.domain.member.entity
 
 import com.example.simple_blog.domain.AuditingEntity
 import com.example.simple_blog.enumstrorage.MemberRole
