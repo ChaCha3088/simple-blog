@@ -5,6 +5,7 @@ import com.example.simple_blog.enumstrorage.MemberRole
 import com.example.simple_blog.enumstrorage.MemberRole.USER
 import jakarta.persistence.*
 import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotNull
 
 @Entity
 class Member (
@@ -25,16 +26,16 @@ class Member (
 
     @Column(nullable = false)
     @NotBlank
-    var role: MemberRole = USER
-        protected set
-
-    @Column(nullable = false)
-    @NotBlank
     var name: String = name
         protected set
 
     @Column(nullable = false)
     @NotBlank
     var nickname: String = nickname
+        protected set
+
+    @Column(nullable = false)
+    @NotNull
+    var role: MemberRole = USER
         protected set
 }

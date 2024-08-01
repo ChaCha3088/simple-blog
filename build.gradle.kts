@@ -40,7 +40,11 @@ dependencies {
 //	implementation("org.springframework.boot:spring-boot-starter-websocket")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
 	implementation("com.mysql:mysql-connector-j:8.0.33")
+
+	implementation("io.github.serpro69:kotlin-faker:1.16.0")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
